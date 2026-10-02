@@ -1,0 +1,36 @@
+# Unreal Engine Temporary & Generated Folders
+Binaries/*
+DerivedDataCache/*
+Intermediate/*
+Saved/*
+Build/*
+
+# IDE and Project Generation Files
+.vs/
+.vscode/
+.idea/
+*.sln
+*.xcodeproj
+*.xcworkspace
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Source code binaries (Compiled Object/Library files)
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.so
+*.dylib
+*.dll
+*.lib
+*.exe
