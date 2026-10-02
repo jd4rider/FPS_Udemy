@@ -1,0 +1,43 @@
+// Copyright Jonathan Forrider Web Designs
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Character.h"
+#include "ShooterCharacter.generated.h"
+
+class USpringArmComponent;
+class UCameraComponent;
+
+UCLASS()
+class FPS_API AShooterCharacter : public ACharacter
+{
+	GENERATED_BODY()
+
+public:
+	// Sets default values for this character's properties
+	AShooterCharacter();
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	
+private:
+	
+	// 1st person view (arms)
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<USkeletalMeshComponent> Mesh1P;
+	
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<USpringArmComponent> SpringArm;
+	
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<UCameraComponent> FirstPersonCamera;
+};
