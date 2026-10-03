@@ -8,6 +8,7 @@
 
 class USpringArmComponent;
 class UCameraComponent;
+class UCombatComponent;
 
 UCLASS()
 class FPS_API AShooterCharacter : public ACharacter
@@ -30,6 +31,9 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 private:
+	
+	UPROPERTY(VisibleAnywhere)
+	TObjectPtr<UCombatComponent> Combat;
 	
 	// 1st person view (arms)
 	UPROPERTY(VisibleAnywhere)
