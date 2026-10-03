@@ -36,25 +36,31 @@ void UCombatComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 
 void UCombatComponent::Initiate_CycleWeapon()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Cycle Weapon"), false);
 }
 
 void UCombatComponent::Initiate_FireWeapon_Pressed()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Fire Weapon Pressed"), false);
 }
 
 void UCombatComponent::Initiate_FireWeapon_Released()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Fire Weapon Released"), false);
 }
 
 void UCombatComponent::Initiate_ReloadWeapon()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Reload Weapon"), false);
 }
 
 void UCombatComponent::Initiate_Aim_Pressed()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Aim Pressed"), false);
 }
 
 void UCombatComponent::Initiate_Aim_Released()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Aim Released"), false);
 }
 
