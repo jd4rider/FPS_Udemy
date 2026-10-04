@@ -7,6 +7,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Combat/CombatComponent.h"
+#include "Data/WeaponData.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -72,6 +73,18 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 	ShooterInputComponent->BindAction(AimWeaponAction, ETriggerEvent::Completed, this, &ThisClass::Input_Aim_Released);
 
 }
+
+void AShooterCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+	Combat->SpawnInventory();
+}
+
+FName AShooterCharacter::GetWeaponAttachPoint_Implementation(const FGameplayTag& WeaponType) const
+{
+	checkf(Combat->WeaponData, TEXT("No Weapon Data Asset - Please fill out BP_ShooterCharacter"));
+	return Combat->WeaponData->GripPoints.FindChecked(WeaponType);
+}	
 
 void AShooterCharacter::Input_CycleWeapon()
 {
