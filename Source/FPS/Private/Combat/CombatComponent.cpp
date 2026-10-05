@@ -73,10 +73,6 @@ void UCombatComponent::SpawnInventory()
 	{
 		NewWeapon->AttachToOwningPawn();
 	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Failed to spawn weapon of class %s"), *DefaultWeaponClass->GetName());
-	}
 }
 
 void UCombatComponent::DestroyInventory()
